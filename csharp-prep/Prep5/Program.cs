@@ -17,14 +17,22 @@ class Program
         static int PromptUserNumber()
         {
             Console.Write("Please enter your favorite number:");
-            string number = Console.ReadLine();
-            return int.Parse(number);
+            int number = int.Parse(Console.ReadLine());
+            return number;
         }
         static int SquareNumber(int number)
         {
-            double value = number;
-            return Math.Sqrt(number);
-            
+            int square = number * number;
+            return square;
         }
+        static void DisplayResult(int square, string name)
+        {
+            Console.WriteLine($"{name}, the square of your number is {square}");
+        }
+        DisplayWelcome();
+        string UserName = PromptUserName();
+        int UserNumber = PromptUserNumber();
+        int SquaredNumber = SquareNumber(UserNumber);
+        DisplayResult(SquaredNumber, UserName);
     }
 }
