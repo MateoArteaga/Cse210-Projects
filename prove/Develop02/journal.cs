@@ -19,7 +19,7 @@ public class Journal
         using (StreamWriter writter = new StreamWriter(filename))
         foreach(Entry entry in _Entries)
         {
-            writter.WriteLine(entry);
+            writter.WriteLine(Journal1);
         }
     }
     public void load(string filename)
@@ -31,4 +31,5 @@ public class Journal
             _Entries.Add(entry2);
         }
     }
+
 }

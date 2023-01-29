@@ -2,6 +2,7 @@ using System;
 
 class Program
 {
+ 
     static void Main(string[] args)
     {
         var random = new Random();
@@ -12,7 +13,6 @@ class Program
         Console.Write("Please enter your name: ");
         Journal Journal1 = new Journal();
         Journal1._name = Console.ReadLine();
-        do
         {
             Console.WriteLine("Menu:");
             Console.WriteLine("1: New Entry");
