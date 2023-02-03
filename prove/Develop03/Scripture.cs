@@ -3,14 +3,12 @@ using System;
 public class Scripture
 {
     private string _reference;
-    private List<string> _scripture = new List<string>
-    {
-        "I", "can", "do", "all", "things", "through", "Christ", "which", "strengtheneth", "me"
-    };
+    private List<string> _scripture = new List<string>();
     
-    public Scripture()
+    public Scripture(string words, string refe)
     {
-        _reference = "Philippians 4:13";
+        _scripture.AddRange(words.Split(' '));
+        _reference = refe;
     }
     public void AddWord(string word)
     {
@@ -50,14 +48,19 @@ public class Scripture
     }
     public bool IsNotEmpty()
     {
-       if (_scripture[0] == "____" && _scripture[1] == "____" && _scripture[2] == "____" && _scripture[3] == "____" && _scripture[4] == "____" && _scripture[5] == "____" && _scripture[6] == "____" && _scripture[7] == "____" && _scripture[8] == "____" && _scripture[9] == "____")
-       {
+        int w = 0;
+        while (w < _scripture.Count)
+        {
+            if (_scripture[w] == "____")
+            {
+                w++;
+            }
+            else
+            {
+                return true;
+            }
+        }
         return false;
-       }
-       else
-       {
-        return true;
-       }
     }
        
 }
